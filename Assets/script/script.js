@@ -11,13 +11,11 @@ $('#currentTime').html("The current time is: " + time);
 
  var blocks = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
  var tArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
- var events = ["", "", "", "", "", "", "", "", ""];
+ var events = ["", "", "", "", "Fuck Yeah!", "", "", "", ""];
  var planner = $("#schedule")
 
 //  check local storage
-if(localStorage.getItem(events)) {
-  events = JSON.parse(localStorage.getItem(events))
-}
+
 
 //Render the schedule
 function renderSchedule() {
@@ -49,7 +47,7 @@ function renderSchedule() {
         addTask.addClass("future")
       }
 
-      var saveBtns = $("<button>").addClass("saveBtn ").attr("id", blocks[i])
+      var saveBtns = $("<button>").addClass("saveBtn save").attr("id", blocks[i] + "save")
       saveBtns.addClass("fa fa-save icon")
       addRow.append(saveBtns)
       
@@ -61,16 +59,5 @@ function renderSchedule() {
 renderSchedule()
 
 //save to local storage 
-function saveToLocal() {
-
-  if (event.target.getAttribute("class") === "saveBtn") {
-      for (var i = 0; i< 9; i++) {
-          events[i] = $("#" + blocks[i] + "event").val()
-          localStorage.setItem("events", JSON.stringify(events))
-      }
-  }
-}
-
-planner.click(saveToLocal)
 
 
