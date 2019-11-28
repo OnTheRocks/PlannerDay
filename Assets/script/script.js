@@ -11,7 +11,7 @@ $('#currentTime').html("The current time is: " + time);
 
  var blocks = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
  var tArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
- var events = ["", "", "", "", "Fuck Yeah!", "", "", "", ""];
+ var events = ["", "", "", "", "", "", "", "", ""];
  var planner = $("#schedule")
 
 //  check local storage
